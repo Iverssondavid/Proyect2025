@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'intro',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   },
 ];
 
@@ -23,4 +23,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
