@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-center">
+      Discenter
+    </ion-title>
+    <ion-buttons>
+      <ion-menu-button class="style-button"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content">
+
+  <h1 class="home-content">{{user_data.name}} {{user_data.last_name}}</h1>
+
+  <div class="image-post-container" *ngIf="!isEditing" class="card-style">
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <p>{{user_data.username}}</p>
+    <p>{{user_data.followers.length}} Seguidores</p>
+    <p>{{user_data.followees.length}} Seguidos</p>
+  </div>
+
+  <div>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="pencil"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-list side="top">
+        <ion-fab-button (click)="presentPhotoOptions()" class="style-icon">
+          <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+
+<div>
+
+          <ion-item class="card-sty" >
+          <div>
+            <ion-label position="center">Nombre: </ion-label>
+            <ion-input [(ngModel)]="user_data.name" placeholder="Ingresa tu nombre"></ion-input>
+          </div>
+          </ion-item>
+
+          <ion-item class="card-sty"  >
+            <div>
+            <ion-label position="center">Apellido: </ion-label>
+            <ion-input [(ngModel)]="user_data.last_name" placeholder="Ingresa tu apellido"></ion-input>
+          </div>
+          </ion-item>
+
+          <ion-card class="card-sty" >
+            <ion-button expand="full" class="rounded-button" (click)="update()" class="register-button" >Actualizar Perfil</ion-button>
+            <ion-button expand="full" class="rounded-button light-button" (click)="cancelEdit()" class="register-button" >Cancelar</ion-button>
+          </ion-card>
+        </div>
+
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+</ion-content>

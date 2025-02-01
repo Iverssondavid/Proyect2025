@@ -8,7 +8,7 @@ import { IntroPageRoutingModule } from './intro-routing.mlodule';
 
 import { IntroPage } from './intro.page';
 
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; //IMPORTAMOS EL CUSTOM_ELEMENTS_SCHEMA PARA QUE NO NOS DE ERROR EN EL HTML
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; 
 
 
 @NgModule({
@@ -20,6 +20,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; //IMPORTAMOS EL CUSTOM_E
    
   ],
   declarations: [IntroPage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA] //AÑADIMOS EL CUSTOM_ELEMENTS_SCHEMA
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
 export class IntroPageModule {}

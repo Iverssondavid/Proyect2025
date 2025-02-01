@@ -1,0 +1,39 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+
+    <ion-header>
+     <ion-toolbar>
+
+       <ion-title>NavPanel</ion-title>
+       <ion-buttons slot="end">
+        <ion-button  (click)="closeMenu()">
+          <ion-icon name="close-sharp" class="custom-close-button" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="menu-content">
+<ion-item (click)="Home_page()" >
+  <ion-icon name="home"></ion-icon> Home
+</ion-item>
+
+
+<ion-item (click)="account()" >
+  <ion-icon name="person-circle-sharp"></ion-icon>  Cuenta
+</ion-item>
+
+<ion-item (click)="SearchUsers()">
+  <ion-icon name="people"></ion-icon> Users
+</ion-item>
+
+  <ion-item (click)="log_out()">
+    <ion-icon name="log-out"></ion-icon> Log Out
+  </ion-item>
+
+</ion-content>
+
+</ion-menu>
+<ion-router-outlet id="content"> </ion-router-outlet>
+
+</ion-split-pane>
