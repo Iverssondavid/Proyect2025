@@ -1,29 +1,33 @@
-<ion-content>
-  <swiper-container slides-per-view="1" pagination="true">
-    <!-- Slide 1 -->
-    <swiper-slide class="bg-color-slide">
-      <h1 class="title1">App Aéreo 1</h1>
-      <img src="/proyect2025/src/assets/images/Recetas.jpg" alt="Recetas" class="Recetas" width="185" />
-      <ion-icon name="airplane-outline" class="icon-large"></ion-icon>
-      <p>Descubre las mejores recetas para disfrutar en tus viajes.</p>
+<ion-content class="ion-padding">
+  <swiper-container slides-per-view="1" pagination="true" class="full-screen">
+    
+    <swiper-slide class="bg-color-slide text-center">
+      <ion-icon name="arrow-forward-outline" class="icon-style"></ion-icon>
+      <h1 class="title1">¡Bienvenidos a Mis Recetas!</h1>
+      <img src="assets/images/Recetas.jpg" class="slide-image">
+      <p class="type1">Descubre ideas deliciosas para tus comidas diarias. Guarda, comparte y disfruta.</p>
     </swiper-slide>
 
-    <!-- Slide 2 -->
-    <swiper-slide>
-      <h1 class="title2">Explora Recetas</h1>
-      <img src="/proyect2025/src/assets/images/Sabores.jpg" alt="buenas recetas" class="recipe-image" />
-      <ion-icon name="logo-apple" class="icon-large"></ion-icon>
-      <p>Prepara deliciosos postres con frutas frescas.</p>
+    <swiper-slide class="bg-color-slide text-center">
+      <ion-icon name="arrow-forward-outline" class="icon-style"></ion-icon>
+      <h1 class="title1">Explora Nuevas Recetas</h1>
+      <img src="/assets/images/Sabores.jpg" class="slide-image">
+      <p class="type1">Explora una variedad de platos, desde comidas rápidas hasta opciones saludables.</p>
     </swiper-slide>
 
-    <!-- Slide 3 -->
-    <swiper-slide>
-      <ion-icon name="close" class="close-icon" (click)="finish()"></ion-icon>
-      <h1 class="title3">Un Mundo de Sabores</h1>
-      <img src="/proyect2025/src/assets/images/Precio de recetas.pjg.jpg" alt="Receta económica" class="recipe-image" />
-      <ion-icon name="logo-usd" class="icon-large"></ion-icon>
-      <p>Cocina económico y con sabor, ideal para toda la familia.</p>
-      <ion-button expand="block" (click)="finish()">Llévame al Home</ion-button>
+    <swiper-slide class="bg-color-slide text-center">
+      <ion-icon name="arrow-forward-outline" class="icon-style"></ion-icon>
+      <h1 class="title1">Organiza tus Favoritos</h1>
+      <img src="/assets/images/cocina.jpg" class="slide-image">
+      <p class="type1">Guarda y organiza tus recetas en tableros personalizados para acceder fácilmente.</p>
     </swiper-slide>
+
+    <swiper-slide class="bg-color-slide text-center">
+      <ion-icon name="close" class="close-icon icon-style" (click)="finish()"></ion-icon>
+      <h1 class="title1">¡Hazlo a tu Manera!</h1>
+      <img src="/assets/images/comida.jpg" class="slide-image">
+      <p class="type1">Sigue tus intereses culinarios, recibe recomendaciones y haz que cocinar sea divertido.</p>
+    </swiper-slide>
+    
   </swiper-container>
 </ion-content>

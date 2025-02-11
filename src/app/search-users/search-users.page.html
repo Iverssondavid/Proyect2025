@@ -1,29 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Usuarios</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-title class="text-center">RaceGarage</ion-title>
+    <ion-buttons>
+      <ion-menu-button class="style-button"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <ion-toolbar>
-    <ion-searchbar 
-    placeholder="Buscar usuarios..."
-    (ionInput)="searchUsers($event)"></ion-searchbar>
-  </ion-toolbar>
+<ion-content class="home-content">
+  <ion-searchbar
+    search-icon="search-circle"
+    animated="true"
+    placeholder="Search Users"
+    (ionInput)="searchUsers($event)"
+    class="searchbar">
+  </ion-searchbar>
+
   <ion-list>
     <ion-item *ngFor="let user of users">
       <ion-avatar slot="start">
-        <img [src]="user.image || 'assets/images/default-avatar.jpeg'">
+        <img [src]="user.image || 'assets/images/ss.jpg'">
       </ion-avatar>
       <ion-label>
-        <h2>{{ user.name }}  {{ user.last_name }}</h2>
+        <h2>{{ user.name }} {{ user.last_name }}</h2>
       </ion-label>
-      <ion-button slot="end" (click)="toogleFollow(user)">
+      <ion-button slot="end" (click)="toggleFollow(user)">
         <ion-icon [name]="user.is_following ? 'heart-dislike-outline' : 'heart-outline'"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
+
+  <ion-infinite-scroll threshold="50px" (ionInfinite)="loadUsers($event)" *ngIf="hasHoreUsers">
+    <ion-infinite-scroll-content
+      loadingText="Ya vienen!!!"
+      loadingSpinner="bubbles"
+      class="scroll-content">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

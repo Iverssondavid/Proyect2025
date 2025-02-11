@@ -1,17 +1,21 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import { CanActivate } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+import { NavController } from "@ionic/angular";
+@Injectable({
+  providedIn: 'root'
+  })
 
-import { loginguard } from './login.guard';
+export class LoginGuard implements CanActivate{
+  constructor(private storage: Storage, private navCtrl: NavController){}
+  async canActivate(){
+  const isUserLoggedIn = await this.storage.get('isUserLoggedIn');
+    if (isUserLoggedIn){
+        return true;
+    }else{
+      this.navCtrl.navigateRoot('/login')
+      return false;
+    }
+  }
 
-describe('loginGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => loginguard(...guardParameters));
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-  });
-
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
-  });
-});
+}

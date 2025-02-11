@@ -1,39 +1,42 @@
-<ion-split-pane>
+<ion-split-pane contentId="content">
+  <!-- Menú lateral -->
   <ion-menu contentId="content">
-
     <ion-header>
-     <ion-toolbar>
+      <ion-toolbar>
+        <ion-title class="menu-title">Panel de Navegación</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeMenu()">
+            <ion-icon name="close-sharp" class="custom-close-button"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 
-       <ion-title>NavPanel</ion-title>
-       <ion-buttons slot="end">
-        <ion-button  (click)="closeMenu()">
-          <ion-icon name="close-sharp" class="custom-close-button" ></ion-icon>
-        </ion-button>
-      </ion-buttons>
+    <ion-content class="menu-content">
+      <ion-list>
+        <ion-item button (click)="Home_page()" class="menu-item">
+          <ion-icon name="home" slot="start"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-item>
 
-  </ion-toolbar>
-</ion-header>
-<ion-content class="menu-content">
-<ion-item (click)="Home_page()" >
-  <ion-icon name="home"></ion-icon> Home
-</ion-item>
+        <ion-item button (click)="account()" class="menu-item">
+          <ion-icon name="person-circle-sharp" slot="start"></ion-icon>
+          <ion-label>Cuenta</ion-label>
+        </ion-item>
 
+        <ion-item button (click)="SearchUsers()" class="menu-item">
+          <ion-icon name="people" slot="start"></ion-icon>
+          <ion-label>Usuarios</ion-label>
+        </ion-item>
 
-<ion-item (click)="account()" >
-  <ion-icon name="person-circle-sharp"></ion-icon>  Cuenta
-</ion-item>
+        <ion-item button (click)="log_out()" class="menu-item logout">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          <ion-label>Cerrar Sesión</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-<ion-item (click)="SearchUsers()">
-  <ion-icon name="people"></ion-icon> Users
-</ion-item>
-
-  <ion-item (click)="log_out()">
-    <ion-icon name="log-out"></ion-icon> Log Out
-  </ion-item>
-
-</ion-content>
-
-</ion-menu>
-<ion-router-outlet id="content"> </ion-router-outlet>
-
+  <!-- Contenido principal -->
+  <ion-router-outlet id="content"></ion-router-outlet>
 </ion-split-pane>

@@ -1,77 +1,48 @@
+/* Fondo con textura de fibra de carbono */
 ion-content {
-    --background: #fef9f6; 
-    padding: 10px;
-  }
-  
-  ion-toolbar {
-    --background: #ffd1a9; 
-    --color: #ffffff; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  ion-card {
-    margin: 10px 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-    background-color: #ffffff; 
-  }
-  
-  .image-post {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    object-fit: cover;
-    max-height: 200px;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .user-avatar {
-    display: inline-block;
-    margin-right: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #ffc4b3; 
-  }
-  
-  .user-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  ion-card-subtitle {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #666666; 
-  }
-  
-  ion-card-header {
-    padding: 10px;
-    font-weight: bold;
-    color: #333333; 
-  }
-  
-  ion-card-content {
-    padding: 10px;
-    color: #777777; 
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  
-  ion-card:hover {
-    transform: scale(1.02);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-  }
-  
-  ion-fab {
-    ion-fab-button {
-      --background: #ffb3b3; 
-      --color: #ffffff; 
-    }
-  }
+  --background: url('/assets/images/carbonfiber.jpg') no-repeat center center/cover;
+  color: white;
+}
+
+/* Barra de herramientas en negro con detalles rojos */
+.toolbar-container {
+  background: linear-gradient(to right, #ff0000, #000);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Tarjetas con borde rojo y fondo oscuro */
+.race-card {
+  background-color: rgba(20, 20, 20, 0.9);
+  color: white;
+  border: 2px solid #ff0000;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Avatar con borde amarillo como las líneas de la pista */
+.user-avatar img {
+  border: 3px solid #ffcc00;
+  border-radius: 50%;
+}
+
+/* Botón de agregar post con ícono de auto */
+ion-fab-button {
+  background: #ff0000;
+  color: white;
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
+}
+
+/* Logo centrado en el FAB */
+.app-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+
+/* Infinite Scroll con texto en amarillo */
+ion-infinite-scroll-content {
+  color: #ffcc00;
+  font-style: italic;
+}

@@ -7,12 +7,25 @@ const routes: Routes = [
   {
     path: '',
     component: MenuPage,
-    children: [
+    children:[
       {
-        path: "home",
+       path: "home",
+       loadChildren: () =>
+         import("../home/home.module").then(m => m.HomePageModule)
+      },
+      {
+        path: 'account',
         loadChildren: () =>
-           import("../home/home.module").then(m => m.HomePageModule)
-   }
+          import('../account/account.module').then( m => m.AccountPageModule)
+      },
+      {
+        path: 'search-users',
+        loadChildren: () => import('../search-users/search-users.module').then( m => m.SearchUsersPageModule)
+      },
+      {
+        path: 'add-post-modal',
+        loadChildren: () => import('../add-post-modal/add-post-modal.module').then( m => m.AddPostModalPageModule)
+      },
     ]
   }
 ];

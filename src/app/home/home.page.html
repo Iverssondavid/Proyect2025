@@ -1,41 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar class="toolbar-container">
+    <ion-title class="text-center">
+      Home
+    </ion-title>
+
+    <ion-buttons>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+
   </ion-toolbar>
+
 </ion-header>
-<ion-content>
-  <ion-list>
-    <ion-progress-bar type="indeterminate" *ngIf="isLoading"></ion-progress-bar>
-    <ion-card *ngFor="let post of posts">
-      <img src="{{post.image}}" clas="image-post" />
+
+<ion-content >
+  <ion-progress-bar type="indeterminate" color="medium" *ngIf="isLoading"></ion-progress-bar>
+  <ion-list class="home-content" >
+    <ion-card *ngFor="let post of posts" class="pastel-card">
+      <img src="{{post.image}}" />
       <ion-card-header>
         <ion-card-subtitle>
           <ion-avatar class="user-avatar">
-            <img [src]="post.user.image ? post.user.image : 'assets/images/default-avatar.png'" />
-                    
+            <img [src]="post.user.image ? post.user.image : 'assets/images/imagepredert.jpg'" />
           </ion-avatar>
-          {{post.user.name}} 
+          <p>{{post.user.name}}</p>
         </ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-         {{post.description}}
+        {{post.description}}
       </ion-card-content>
     </ion-card>
   </ion-list>
 
-  <ion-infinite-scroll threshold="100px" 
-  (ionInfinite)="loadPosts($event)" 
-  *ngIf="hasMore">
-  <ion-infinite-scroll-content 
-  loadingSpinner="bubbles" 
-  loadingText="Cargando mas publicaciones..."></ion-infinite-scroll-content>
+  <ion-card class="scroll-content" >
+  <ion-infinite-scroll threshold="250px" (ionInfinite)="loadPosts($event)" *ngIf="hasMore" >
+    <ion-infinite-scroll-content loadingText="  " loadingSpinner="crescent"  ></ion-infinite-scroll-content>
   </ion-infinite-scroll>
+</ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addPost()">
-      <ion-icon name="add"></ion-icon>
+      <ion-icon name="image-sharp"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-fab vertical="" horizontal="center" slot="fixed" >
+    <ion-avatar class="app-logo">
+      <img src="/assets/images/cr72.jpg" alt="Logo"/>
+    </ion-avatar>
+  </ion-fab>
+
 </ion-content>

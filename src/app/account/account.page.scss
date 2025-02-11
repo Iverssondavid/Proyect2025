@@ -1,140 +1,151 @@
 ion-header {
-    ion-toolbar {
-      background: #fffaf0;  // Color de fondo suave
-      color: #555555;  // Texto oscuro para contraste
-      padding: 16px 20px;  // Mayor espacio para un diseño más aireado
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  // Sombra más suave y difusa
-  
-      ion-buttons {
-        ion-menu-button {
-          color: #ffa85c;  // Color del ícono
-          font-size: 24px;  // Ícono más grande para visibilidad
-        }
-      }
-    }
+  --background: #f5e1da; /* Fondo pastel para el header */
+  ion-toolbar {
+    --background: #f5e1da; /* Fondo pastel para el toolbar */
   }
-  
-  ion-content {
-    background: linear-gradient(135deg, #ffe8cc 0%, #ffdfba 50%, #fff4e6 100%);  // Color de fondo con gradiente
-    padding: 24px;  // Espaciado adecuado
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;  // Bordes redondeados más suaves
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);  // Sombra sutil para profundidad
-  
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0.2;
-    }
-  
-    &::before {
-      top: -100px;
-      left: -100px;
-      width: 350px;
-      height: 350px;
-      background: rgba(255, 153, 51, 0.15);  // Círculo suave en el fondo
-    }
-  
-    &::after {
-      bottom: -100px;
-      right: -100px;
-      width: 380px;
-      height: 380px;
-      background: rgba(255, 153, 51, 0.1);
-    }
-  
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;  // Título más grande para mayor impacto
-      font-weight: 700;
-      color: #ffa85c;  // Color del título
-      margin-top: 20px;
-      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);  // Sombra más difusa
-      position: relative;
-      z-index: 1;
-    }
-  
-    ion-avatar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 30px auto;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);  // Sombra más pronunciada
-      background: #fff6e1;  // Fondo claro para el avatar
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;  // Transición suave
-  
-      &:hover {
-        transform: scale(1.1);  // Efecto de zoom al pasar el mouse
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);  // Sombra más fuerte al hacer hover
-      }
-  
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;  // Asegura que la imagen cubra el área del avatar
-      }
-    }
-  
-    p {
-      font-size: 1.4rem;  // Texto más grande para mejor legibilidad
-      color: #555;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 12px 18px;
-      border-radius: 20px;
-      text-align: center;
-      margin: 20px auto;
-      position: relative;
-      z-index: 1;
-      max-width: 80%;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);  // Sombra sutil
-      transition: all 0.3s ease;  // Transición suave al hacer hover
-  
-      &:first-of-type {
-        font-weight: bold;
-        color: #333;
-        background: rgba(255, 255, 255, 0.95);
-      }
-  
-      &:hover {
-        transform: translateY(-6px);  // Efecto de movimiento al pasar el mouse
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);  // Efecto de sombra al hover
-      }
-    }
-  
-    ion-button {
-      z-index: 2;
-      font-size: 1.2rem;  // Texto más grande en los botones
-      font-weight: bold;
-      border-radius: 8px;
-      padding: 14px 22px;
-      transition: background-color 0.3s ease, transform 0.3s ease;  // Transición suave
-  
-      &:hover {
-        background-color: #ffa85c;  // Cambio de color al hover
-        transform: translateY(-3px);  // Efecto de desplazamiento al pasar el mouse
-      }
-    }
-  
-    ion-button[color="light"] {
-      background: #f0f0f0;
-      color: #333;
-      border-radius: 8px;
-      padding: 14px 22px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-  
-      &:hover {
-        background-color: #e0e0e0;  // Cambio de color al hover
-        transform: translateY(-3px);  // Efecto de desplazamiento al hover
-      }
-    }
+}
+
+.home-content {
+  --background: #7cc9dc84; /* Fondo pastel para el contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #5b5b5b;
+}
+
+.text-center {
+  color: #5b5b5b; /* Color del texto */
+}
+
+.profile-title {
+  font-size: 1.5em;
+  color: #5b5b5b; /* Color del texto */
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-post {
+  width: 100px;
+  height: 100px; /* Ajusta la altura y el ancho de la imagen para que sea proporcional */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* Asegura que la imagen se ajuste bien dentro del contenedor */
+}
+
+ion-buttons ion-menu-button {
+  --background: #ffccd5; /* Fondo pastel para el botón */
+  color: #5b5b5b; /* Color del icono */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column; /* O utiliza row si prefieres que las tarjetas se alineen en fila */
+  align-items: center;
+  justify-content: center;
+}
+
+ion-fab {
+  ion-fab-button {
+    --background: #3f3b3bac;
+    --color: #ffccd5;
   }
-  
+}
+
+.card-style {
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #e8f0fe; /* Color pastel para las tarjetas */
+  color: #5b5b5b; /* Color del texto */
+  box-shadow: 0 4px 8px rgba(214, 214, 214, 0.36);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; /* Efecto de transición */
+  text-align: center; /* Centra el texto dentro de la tarjeta */
+
+  display: flex; /* Añadir flexbox para centrar el contenido verticalmente */
+  flex-direction: column; /* Asegura que los elementos hijos se alineen en columna */
+  justify-content: center; /* Centra verticalmente */
+
+  &:hover {
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.98); /* Efecto al hacer clic */
+  }
+}
+
+ion-item {
+  --background: #e8f0fe; /* Fondo pastel para los ítems */
+  border-radius: 10px; /* Bordes redondeados para los ítems */
+  margin: 5px 0;
+}
+
+p {
+  color: #5b5b5b; /* Color del texto */
+  margin: 5px 0;
+  text-align: center;
+}
+
+.style-button {
+  color: #5b5b5b; /* Color del botón */
+}
+
+.rounded-button {
+  border-radius: 20px; /* Bordes redondeados para los botones */
+}
+
+.light-button {
+  background-color: #ffccd5; /* Color pastel claro para el botón */
+}
+
+ion-button {
+  --background: #ffccd5; /* Fondo pastel para los botones */
+  color: #5b5b5b; /* Color del texto de los botones */
+  transition: transform 0.1s ease-in-out; /* Efecto de transición */
+
+  &:active {
+    transform: scale(1.95); /* Efecto al hacer click */
+  }
+}
+
+.register-button {
+  &:active {
+    background-color: #e6b8b8; /* Cambia el color de fondo al hacer clic */
+    transform: scale(1.25); /* Efecto al hacer clic */
+  }
+}
+
+.card-sty {
+  align-items: center;
+
+  height: auto; /* Permitir que la altura sea automática */
+
+  margin: 10px auto; /* Ajusta el margen para centrar la tarjeta horizontalmente */
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #5e5e5e; /* Color pastel para las tarjetas */
+  color: #000; /* Color del texto */
+  box-shadow: 0 4px 8px rgba(214, 214, 214, 0.36);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; /* Efecto de transición */
+  text-align: center; /* Centra el texto dentro de la tarjeta */
+
+  display: flex; /* Añadir flexbox para centrar el contenido verticalmente */
+  flex-direction: column; /* Asegura que los elementos hijos se alineen en columna */
+  justify-content: center; /* Centra verticalmente */
+
+  &:hover {
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.98); /* Efecto al hacer clic */
+  }
+}

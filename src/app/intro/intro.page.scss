@@ -1,26 +1,41 @@
-swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-  swiper-slide {
+/* Ajuste de tamaño para todas las imágenes del slider */
+.slide-image {
+  max-width: 80%;  /* Reduce el tamaño sin perder calidad */
+  height: auto;     /* Mantiene la proporción */
+  border-radius: 10px; /* Bordes redondeados para mejor estética */
+  margin-top: 15px;
+}
+
+/* Ajustes del Swiper Slide */
+.bg-color-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(15, 84, 144, 0.751);
-  }
-  .title1 {
-  color: green;
-  }
-  
-  .bg-color-slide {
-  background-color: rgba(15, 84, 144, 0.751);
-  }
-  
-  .close-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    color: white;
-  }
+  text-align: center;
+  padding: 20px;
+  background-color: #e8f0fe;
+  border-radius: 10px;
+}
+
+/* Estilos adicionales para el icono */
+.icon-style {
+  font-size: 30px;
+  color: #ff7b00;
+  margin-bottom: 10px;
+}
+
+/* Ajuste de los títulos */
+.title1 {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Ajuste de los textos */
+.type1 {
+  font-size: 1em;
+  color: #555;
+  max-width: 80%;
+  line-height: 1.5;
+}

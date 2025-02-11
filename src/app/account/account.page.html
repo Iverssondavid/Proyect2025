@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="text-center">
-      Discenter
+      Cuenta
     </ion-title>
     <ion-buttons>
       <ion-menu-button class="style-button"></ion-menu-button>
@@ -14,9 +14,7 @@
   <h1 class="home-content">{{user_data.name}} {{user_data.last_name}}</h1>
 
   <div class="image-post-container" *ngIf="!isEditing" class="card-style">
-    <ion-avatar>
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-    </ion-avatar>
+    <img src="/assets/images/cr7.jpg" class="image-post" />
     <p>{{user_data.username}}</p>
     <p>{{user_data.followers.length}} Seguidores</p>
     <p>{{user_data.followees.length}} Seguidos</p>

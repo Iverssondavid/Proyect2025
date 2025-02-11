@@ -1,62 +1,89 @@
-<ion-header >
+<ion-header>
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title class="text-center">registro</ion-title>
+    <ion-icon name="arrow-back" class="close-icon" (click)="finish()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="registerForm"  (ngSubmit)="registerUser(registerForm.value)">
-    <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="Example@email.com" formControlName="email"></ion-input>
-    </ion-item>
-    <ng-container *ngFor="let error of formErrors.email">
-      <ion-label color="danger"
-      *ngIf="(registerForm.get('email')?.hasError(error.type) && registerForm.get('email')?.dirty)">
-      {{ error.message }}
-    </ion-label>
-    </ng-container>
-    <ion-button
-      type="submit"
-      [disabled]="!registerForm.valid"
-      ></ion-button>
+<ion-content class="home-content">
+  <ion-img
+    alt="logoapp"
+    src="/assets/images/logo.jpg"
+    class="logo-img">
+  </ion-img>
+
+  <form [formGroup]="registerFrom" (ngSubmit)="registerUser(registerFrom.value)" class="register-form">
+    <ion-card>
+      <ion-item>
+        <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Nombre" labelPlacement="floating" placeholder="" formControlName="name"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Apellido" labelPlacement="floating" placeholder="" formControlName="lastname"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Username" labelPlacement="floating" placeholder="" formControlName="username"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Verificación" labelPlacement="floating" type="password" placeholder="" formControlName="passwordConfirmation"></ion-input>
+      </ion-item>
+    </ion-card>
+    <div>
+      <ng-container *ngFor="let error of formErrors.email">
+        <ion-label color="danger" *ngIf="(registerFrom.get('email')?.hasError(error.type) && registerFrom.get('email')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.name">
+        <ion-label color="danger" *ngIf="(registerFrom.get('name')?.hasError(error.type) && registerFrom.get('name')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.lastname">
+        <ion-label color="danger" *ngIf="(registerFrom.get('lastname')?.hasError(error.type) && registerFrom.get('lastname')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.username">
+        <ion-label color="danger" *ngIf="(registerFrom.get('username')?.hasError(error.type) && registerFrom.get('username')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.password">
+        <ion-label color="danger" *ngIf="(registerFrom.get('password')?.hasError(error.type) && registerFrom.get('password')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.passwordConfirmation">
+        <ion-label color="danger" *ngIf="(registerFrom.get('passwordConfirmation')?.hasError(error.type) && registerFrom.get('passwordConfirmation')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+    </div>
+
+    <div class="button-container">
+      <ion-button type="submit" [disabled]="!registerFrom.valid">Sign Up</ion-button>
+    </div>
   </form>
-<form>
-  <!-- Nombre -->
-  <ion-item>
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input type="text" name="name" required></ion-input>
-  </ion-item>
-
-  <!-- Apellido -->
-  <ion-item>
-    <ion-label position="floating">Apellido</ion-label>
-    <ion-input type="text" name="lastname" required></ion-input>
-  </ion-item>
-
-  <!-- Correo -->
-  <ion-item>
-    <ion-label position="floating">Correo</ion-label>
-    <ion-input type="email" name="correo" required></ion-input>
-  </ion-item>
-
-  <!-- Usuario -->
-  <ion-item>
-    <ion-label position="floating">Usuario</ion-label>
-    <ion-input type="text" name="username" required></ion-input>
-  </ion-item>
-
-  <!-- Contraseña -->
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" name="password" required></ion-input>
-  </ion-item>
-
-  <!-- Verificación de Contraseña -->
-  <ion-item>
-    <ion-label position="floating">Confirmar Contraseña</ion-label>
-    <ion-input type="password" name="password-verificate" required></ion-input>
-  </ion-item>
-
-  <!-- Botón de Registro -->
-  <ion-button expand="block" type="submit" color="primary">Registrar</ion-button>
-</form>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-avatar class="app-logo">
+      <img src="/assets/images/logoa1.jpg" alt="Logo"/>
+    </ion-avatar>
+  </ion-fab>
+  <p>{{errorMessage}}</p>
+</ion-content>
