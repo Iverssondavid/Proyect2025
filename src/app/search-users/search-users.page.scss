@@ -1,146 +1,193 @@
+// 📌 Contenedor principal
 #container {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+#container strong {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #6b8596;
+  margin: 10px 0;
+}
+
+#container a {
+  text-decoration: none;
+  color: #ba2f48;
+  font-weight: 500;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #8e1f36;
   }
-  
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
+}
+
+// 📌 Fondo general
+.home-content {
+  background: linear-gradient(135deg, #3b3b3b, #5b5b5b) !important;
+  color: white;
+}
+
+// 📌 Barra de herramientas
+ion-toolbar {
+  --background: #f5e1da;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+
+  img.app-logo {
+    height: 35px;
+    width: auto;
+    margin-left: 10px;
   }
-  
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-    color: #829eae;
-    margin: 0;
+}
+
+// 📌 Botón del menú
+ion-buttons ion-menu-button {
+  --background: #ba2f48b3;
+  color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background 0.3s;
+
+  &:hover {
+    --background: #8e1f36;
   }
-  
-  #container a {
-    text-decoration: none;
+}
+
+// 📌 Contenido
+ion-content {
+  --background: #f9f9f9;
+}
+
+// 📌 Estilos para tarjetas
+.pastel-card {
+  --background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-card-header {
+  --background: #f5e1da;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ion-card-subtitle {
+  color: #5b5b5b;
+  font-style: italic;
+}
+
+ion-card-content {
+  color: #5b5b5b;
+}
+
+// 📌 Avatar redondo
+ion-avatar img {
+  border-radius: 50%;
+  border: 3px solid #f5e1da;
+}
+
+// 📌 Botón flotante (FAB)
+ion-fab ion-fab-button {
+  --background: #3f3b3bac;
+  --color: #ffccd5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+// 📌 Estilos de la barra de búsqueda
+.searchbar {
+  --background: #eeeeee;
+  --placeholder-color: #666;
+  --color: #333;
+  border-radius: 10px;
+}
+
+// 📌 Lista de usuarios
+ion-list {
+  margin-top: 10px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: #333;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// 📌 Pie de página
+.pastel-footer {
+  --background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+// 📌 Botones
+ion-button {
+  --background: #ba2f48;
+  --color: #fff;
+  border-radius: 15px;
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.3s;
+
+  &:hover {
+    --background: #8e1f36;
   }
-  
-  .home-content {
-    background-color: #5b5b5b !important; /* Fondo oscuro para home */
-  }
-  
-  .toolbar-container,
-  ion-toolbar {
-    --background: #f5e1da; /* Fondo pastel para el toolbar */
-  }
-  
-  ion-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #5b5b5b; /* Color del texto */
-  }
-  
-  ion-title img.app-logo {
-    height: 30px; /* Altura de la imagen */
-    width: auto; /* Ajuste automático del ancho */
-    margin-left: 10px; /* Espacio entre el texto y la imagen */
-  }
-  
-  ion-buttons ion-menu-button {
-    --background: #ba2f48b3; /* Fondo pastel para el botón */
-    color: #5b5b5b; /* Color del icono */
-  }
-  
-  ion-content {
-    --background: #f9f9f9; /* Fondo pastel para el contenido */
-  }
-  
-  .pastel-card {
-    --background: #5b5b5b; /* Fondo pastel para las tarjetas */
-  }
-  
-  ion-card-header {
-    --background: #f5e1da; /* Fondo pastel para el header de la tarjeta */
-  }
-  
-  ion-card-subtitle {
-    color: #5b5b5b; /* Color del texto del subtítulo */
-  }
-  
-  ion-avatar img {
-    border-radius: 50%;
-  }
-  
-  ion-card-content {
-    color: #5b5b5b; /* Color del texto del contenido de la tarjeta */
-  }
-  
-  ion-fab ion-fab-button {
-    --background: #3f3b3bac;
-    --color: #ffccd5;
-  }
-  
-  .user-avatar {
-    --border-radius: 50%;
-  }
-  
-  .searchbar {
-    --background: #d3d3d3; /* Color gris para la barra de búsqueda */
-    --placeholder-color: #5b5b5b; /* Color del texto de marcador de posición */
-    --color: #333333; /* Color del texto */
-  }
-  
-  ion-item {
-    --background: #f5e1da; /* Fondo pastel para los ítems */
-    --color: #5b5b5b; /* Color del texto */
-  }
-  
-  .pastel-content {
-    background-color: #5b5b5b !important; /* Fondo pastel */
-  }
-  
-  .pastel-footer {
-    --background: transparent; /* Fondo transparente para ion-footer */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  ion-button {
-    --background: #f5e1da; /* Fondo pastel para el botón */
-    --color: #000;
+}
+
+// 📌 Contenedor de carga de imágenes
+.upload-container {
+  text-align: center;
+  margin: 20px 0;
+
+  img {
+    border: 5px solid #5b5b5b;
     border-radius: 15px;
-    padding: 10px 20px;
-    font-size: 1em;
-    transition: background-color 0.9s;
-  }
-  
-  .upload-container {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .upload-container img {
-    border: 10px solid #5b5b5b; /* Borde pastel para la imagen */
-    border-radius: 10px;
     margin-bottom: 10px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
-  
-  .upload-container p {
-    color: #5b5b5b; /* Color del texto */
-  }
-  
-  .pastel-item {
-    --background: #f5e1da; /* Fondo pastel para ion-item */
+
+  p {
     color: #5b5b5b;
-    margin-bottom: 10px;
+    font-weight: bold;
   }
-  
-  ion-textarea {
-    --background: #ffffff; /* Fondo blanco para textarea */
-    border: 2px solid #5b5b5b; /* Borde pastel */
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-  }
+}
+
+// 📌 Textarea
+ion-textarea {
+  --background: #ffffff;
+  border: 2px solid #5b5b5b;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}

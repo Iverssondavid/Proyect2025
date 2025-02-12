@@ -1,48 +1,85 @@
-/* Fondo con textura de fibra de carbono */
-ion-content {
-  --background: url('/assets/images/carbonfiber.jpg') no-repeat center center/cover;
-  color: white;
-}
-
-/* Barra de herramientas en negro con detalles rojos */
+// Barra superior
 .toolbar-container {
-  background: linear-gradient(to right, #ff0000, #000);
-  color: white;
+  --background: #ff6b81;
+  --color: white;
+  text-align: center;
+}
+
+// Contenido principal
+.home-content {
+  padding: 15px;
+}
+
+// Tarjetas de publicaciones
+.post-card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Imagen del post
+.post-image {
+  width: 15%;
+  height: 200px;
+  object-fit: cover;
+}
+
+// Header de la tarjeta
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+// Avatar del usuario
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ff6b81;
+}
+
+// Nombre del usuario
+.username {
+  font-size: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
+  color: #333;
 }
 
-/* Tarjetas con borde rojo y fondo oscuro */
-.race-card {
-  background-color: rgba(20, 20, 20, 0.9);
-  color: white;
-  border: 2px solid #ff0000;
-  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+// Contenido del post
+.post-content {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-/* Avatar con borde amarillo como las líneas de la pista */
-.user-avatar img {
-  border: 3px solid #ffcc00;
+// Botón de agregar post
+.add-post-btn {
+  --background: #ff6b81;
+  --color: white;
+  font-size: 22px;
+  transition: transform 0.2s ease-in-out;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// Logo flotante
+.app-logo {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ff6b81;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botón de agregar post con ícono de auto */
-ion-fab-button {
-  background: #ff0000;
-  color: white;
-  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
-}
-
-/* Logo centrado en el FAB */
-.app-logo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-}
-
-/* Infinite Scroll con texto en amarillo */
-ion-infinite-scroll-content {
-  color: #ffcc00;
-  font-style: italic;
-}

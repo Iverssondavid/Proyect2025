@@ -1,21 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="text-center">Login</ion-title>
+    <ion-title class="text-center">Iniciar Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="home-content">
-  <!-- Logo con tamaño corregido -->
-  <ion-img alt="logoapp1" src="assets/images/logo.jpg" class="logo-img"></ion-img>
+  <div class="logo-container">
+    <ion-img alt="logoapp1" src="assets/images/logo.jpg" class="logo-img"></ion-img>
+  </div>
 
   <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login-form">
-    <ion-card>
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
+        <ion-input label="Email" labelPlacement="floating" formControlName="email"></ion-input>
       </ion-item>
     </ion-card>
-    
-    <div>
+
+    <div class="error-messages">
       <ng-container *ngFor="let error of formErrors.email">
         <ion-label color="danger"
           *ngIf="(loginForm.get('email')?.hasError(error.type) && loginForm.get('email')?.dirty)">
@@ -24,13 +25,13 @@
       </ng-container>
     </div>
 
-    <ion-card>
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Password" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" formControlName="password"></ion-input>
       </ion-item>
     </ion-card>
 
-    <div>
+    <div class="error-messages">
       <ng-container *ngFor="let error of formErrors.password">
         <ion-label color="danger"
           *ngIf="(loginForm.get('password')?.hasError(error.type) && loginForm.get('password')?.dirty)">
@@ -40,17 +41,17 @@
     </div>
 
     <div class="button-container">
-      <ion-button type="submit" [disabled]="!loginForm.valid">Sign In</ion-button>
-      <ion-button (click)="goToIntro()" class="register-button">Sign Up</ion-button>
+      <ion-button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</ion-button>
+      <ion-button fill="outline" (click)="goToIntro()" class="register-button">Registrarse</ion-button>
     </div>
   </form>
 
-  <!-- Avatar con tamaño corregido -->
+
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-avatar class="app-logo">
-      <img src="/assets/images/logo1.jpg" alt="Logo"/>
+      <img src="/assets/images/logo.jpg" alt="Logo"/>
     </ion-avatar>
   </ion-fab>
 
-  <p>{{errorMessage}}</p>
+  <p class="error-message">{{ errorMessage }}</p>
 </ion-content>

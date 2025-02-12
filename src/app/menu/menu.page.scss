@@ -1,45 +1,97 @@
-/* Estilo del menú */
-.menu-content {
-  --background: #f4f4f4;
+// Estilos del menú
+ion-menu {
+  --background: #f9f9f9;
+  --width: 260px;
 }
 
-/* Título del menú */
-.menu-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
+// Encabezado del menú
+ion-toolbar {
+  --background: #ff6b81;
+  color: white;
+  text-align: center;
+
+  .menu-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 }
 
-/* Botón de cierre */
+// Botón de cierre
 .custom-close-button {
   font-size: 24px;
-  color: #e74c3c; /* Rojo elegante */
+  color: white;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
-/* Estilos de los ítems del menú */
+// Sección del perfil
+.menu-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  background: #ffe5ec;
+  text-align: center;
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff6b81;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-name {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+// Lista de opciones
+ion-list {
+  padding: 10px;
+}
+
+// Ítems del menú
 .menu-item {
-  --padding-start: 15px;
+  --background: transparent;
+  --color: #333;
   font-size: 1rem;
-  color: #555;
-  transition: background-color 0.3s ease-in-out;
+  font-weight: 500;
+  border-radius: 10px;
+  margin: 5px 0;
+  transition: background 0.2s ease-in-out;
+
+  ion-icon {
+    color: #ff6b81;
+    font-size: 20px;
+  }
+
+  &:hover {
+    --background: #ffe5ec;
+  }
+
+  &:active {
+    --background: #ffccd5;
+  }
 }
 
-/* Efecto hover para los ítems */
-.menu-item:hover {
-  background-color: #e0e0e0;
-}
+// Estilo especial para cerrar sesión
+.menu-item.logout {
+  --color: #d9534f;
+  font-weight: bold;
 
-/* Íconos dentro de los ítems */
-.menu-item ion-icon {
-  font-size: 22px;
-  color: #4a90e2; /* Azul pastel */
-}
+  ion-icon {
+    color: #d9534f;
+  }
 
-/* Botón de cerrar sesión con un color distinto */
-.logout {
-  color: #e74c3c;
-}
-
-.logout ion-icon {
-  color: #e74c3c;
+  &:hover {
+    --background: #f8d7da;
+  }
 }

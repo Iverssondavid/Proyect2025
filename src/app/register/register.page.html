@@ -1,89 +1,109 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title class="text-center">registro</ion-title>
-    <ion-icon name="arrow-back" class="close-icon" (click)="finish()"></ion-icon>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="finish()">
+        <ion-icon name="arrow-back" class="close-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="text-center">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="home-content">
-  <ion-img
-    alt="logoapp"
-    src="/assets/images/logo.jpg"
-    class="logo-img">
-  </ion-img>
+  <!-- Logo -->
+  <div class="logo-container">
+    <ion-img alt="Logo App" src="/assets/images/logo.jpg" class="logo-img"></ion-img>
+  </div>
 
   <form [formGroup]="registerFrom" (ngSubmit)="registerUser(registerFrom.value)" class="register-form">
-    <ion-card>
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-card>
+
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Nombre" labelPlacement="floating" placeholder="" formControlName="name"></ion-input>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="name"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-card>
+
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Apellido" labelPlacement="floating" placeholder="" formControlName="lastname"></ion-input>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="lastname"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-card>
+
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Username" labelPlacement="floating" placeholder="" formControlName="username"></ion-input>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input formControlName="username"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-card>
+
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
     </ion-card>
-    <ion-card>
+
+    <ion-card class="form-card">
       <ion-item>
-        <ion-input label="Verificación" labelPlacement="floating" type="password" placeholder="" formControlName="passwordConfirmation"></ion-input>
+        <ion-label position="floating">Verificación</ion-label>
+        <ion-input type="password" formControlName="passwordConfirmation"></ion-input>
       </ion-item>
     </ion-card>
-    <div>
+
+    <!-- Sección de Errores -->
+    <div class="error-messages">
       <ng-container *ngFor="let error of formErrors.email">
-        <ion-label color="danger" *ngIf="(registerFrom.get('email')?.hasError(error.type) && registerFrom.get('email')?.dirty)">
+        <ion-label color="danger" *ngIf="registerFrom.get('email')?.hasError(error.type) && registerFrom.get('email')?.dirty">
           {{ error.message }}
         </ion-label>
       </ng-container>
       <ng-container *ngFor="let error of formErrors.name">
-        <ion-label color="danger" *ngIf="(registerFrom.get('name')?.hasError(error.type) && registerFrom.get('name')?.dirty)">
+        <ion-label color="danger" *ngIf="registerFrom.get('name')?.hasError(error.type) && registerFrom.get('name')?.dirty">
           {{ error.message }}
         </ion-label>
       </ng-container>
       <ng-container *ngFor="let error of formErrors.lastname">
-        <ion-label color="danger" *ngIf="(registerFrom.get('lastname')?.hasError(error.type) && registerFrom.get('lastname')?.dirty)">
+        <ion-label color="danger" *ngIf="registerFrom.get('lastname')?.hasError(error.type) && registerFrom.get('lastname')?.dirty">
           {{ error.message }}
         </ion-label>
       </ng-container>
       <ng-container *ngFor="let error of formErrors.username">
-        <ion-label color="danger" *ngIf="(registerFrom.get('username')?.hasError(error.type) && registerFrom.get('username')?.dirty)">
+        <ion-label color="danger" *ngIf="registerFrom.get('username')?.hasError(error.type) && registerFrom.get('username')?.dirty">
           {{ error.message }}
         </ion-label>
       </ng-container>
       <ng-container *ngFor="let error of formErrors.password">
-        <ion-label color="danger" *ngIf="(registerFrom.get('password')?.hasError(error.type) && registerFrom.get('password')?.dirty)">
+        <ion-label color="danger" *ngIf="registerFrom.get('password')?.hasError(error.type) && registerFrom.get('password')?.dirty">
           {{ error.message }}
         </ion-label>
       </ng-container>
       <ng-container *ngFor="let error of formErrors.passwordConfirmation">
-        <ion-label color="danger" *ngIf="(registerFrom.get('passwordConfirmation')?.hasError(error.type) && registerFrom.get('passwordConfirmation')?.dirty)">
+        <ion-label color="danger" *ngIf="registerFrom.get('passwordConfirmation')?.hasError(error.type) && registerFrom.get('passwordConfirmation')?.dirty">
           {{ error.message }}
         </ion-label>
       </ng-container>
     </div>
 
+    <!-- Botón de Registro -->
     <div class="button-container">
-      <ion-button type="submit" [disabled]="!registerFrom.valid">Sign Up</ion-button>
+      <ion-button type="submit" [disabled]="!registerFrom.valid" expand="full">Registrarse</ion-button>
     </div>
   </form>
+
+  <!-- Logo flotante -->
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-avatar class="app-logo">
-      <img src="/assets/images/logoa1.jpg" alt="Logo"/>
+      <img src="/assets/images/logo.jpg" alt="Logo">
     </ion-avatar>
   </ion-fab>
-  <p>{{errorMessage}}</p>
+
+  <p class="error-message">{{ errorMessage }}</p>
 </ion-content>

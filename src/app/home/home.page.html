@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar class="toolbar-container">
     <ion-title class="text-center">
-      Home
+      Inicio
     </ion-title>
 
-    <ion-buttons>
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
@@ -12,40 +12,42 @@
 
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-progress-bar type="indeterminate" color="medium" *ngIf="isLoading"></ion-progress-bar>
-  <ion-list class="home-content" >
-    <ion-card *ngFor="let post of posts" class="pastel-card">
-      <img src="{{post.image}}" />
-      <ion-card-header>
-        <ion-card-subtitle>
-          <ion-avatar class="user-avatar">
-            <img [src]="post.user.image ? post.user.image : 'assets/images/imagepredert.jpg'" />
-          </ion-avatar>
-          <p>{{post.user.name}}</p>
-        </ion-card-subtitle>
+
+  <ion-list class="home-content">
+    <ion-card *ngFor="let post of posts" class="post-card">
+      <img [src]="post.image" alt="Post Image" class="post-image" />
+
+      <ion-card-header class="post-header">
+        <ion-avatar class="user-avatar">
+          <img [src]="post.user.image ? post.user.image : '/assets/images/avatar.jpg'" />
+        </ion-avatar>
+        <p class="username">{{post.user.name}}</p>
       </ion-card-header>
-      <ion-card-content>
-        {{post.description}}
+
+      <ion-card-content class="post-content">
+        {{ post.description }}
       </ion-card-content>
     </ion-card>
   </ion-list>
 
-  <ion-card class="scroll-content" >
-  <ion-infinite-scroll threshold="250px" (ionInfinite)="loadPosts($event)" *ngIf="hasMore" >
-    <ion-infinite-scroll-content loadingText="  " loadingSpinner="crescent"  ></ion-infinite-scroll-content>
+  <ion-infinite-scroll threshold="200px" (ionInfinite)="loadPosts($event)" *ngIf="hasMore">
+    <ion-infinite-scroll-content loadingText="Cargando más publicaciones..." loadingSpinner="crescent"></ion-infinite-scroll-content>
   </ion-infinite-scroll>
-</ion-card>
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="addPost()">
-      <ion-icon name="image-sharp"></ion-icon>
+    <ion-fab-button (click)="addPost()" class="add-post-btn">
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-fab vertical="" horizontal="center" slot="fixed" >
-    <ion-avatar class="app-logo">
-      <img src="/assets/images/cr72.jpg" alt="Logo"/>
-    </ion-avatar>
-  </ion-fab>
 
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-avatar class="app-logo">
+      <img src="/assets/images/cr72.jpg" alt="Logo" />
+    </ion-avatar>
+
+  </ion-fab>
+  
 </ion-content>

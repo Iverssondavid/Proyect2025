@@ -26,23 +26,23 @@ export class LoginPage implements OnInit {
     ]
   };
 
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private autenticationService: AuthService,
     private navCtrl: NavController,
     private storage: Storage
   ) {
-   
-   
+
     this.loginForm = this.formBuilder.group({
 
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.email
+
       ])),
 
-      
+
       password: new FormControl('', Validators.compose([
 
         Validators.required,
@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
 
   }
 
-  
+
   loginUser(credentials: any) {
     this.autenticationService.login(credentials).then((res: any) => {
       console.log(res);

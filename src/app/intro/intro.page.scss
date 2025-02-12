@@ -1,9 +1,10 @@
 /* Ajuste de tamaño para todas las imágenes del slider */
 .slide-image {
-  max-width: 80%;  /* Reduce el tamaño sin perder calidad */
-  height: auto;     /* Mantiene la proporción */
-  border-radius: 10px; /* Bordes redondeados para mejor estética */
+  max-width: 85%;  /* Reduce el tamaño sin perder calidad */
+  height: auto;    /* Mantiene la proporción */
+  border-radius: 15px; /* Bordes más redondeados para una estética moderna */
   margin-top: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar */
 }
 
 /* Ajustes del Swiper Slide */
@@ -13,29 +14,51 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
-  background-color: #e8f0fe;
-  border-radius: 10px;
+  padding: 25px;
+  background: linear-gradient(180deg, #e8f0fe 0%, #ffffff 100%);
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para efecto flotante */
 }
 
 /* Estilos adicionales para el icono */
 .icon-style {
-  font-size: 30px;
+  font-size: 40px;
   color: #ff7b00;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease-in-out; /* Efecto de animación */
+
+  &:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  }
 }
 
 /* Ajuste de los títulos */
 .title1 {
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: bold;
-  color: #333;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
 /* Ajuste de los textos */
-.type1 {
-  font-size: 1em;
-  color: #555;
-  max-width: 80%;
-  line-height: 1.5;
+.text-description {
+  font-size: 1.1em;
+  color: #444;
+  max-width: 85%;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Ajustes para el botón de cierre */
+.close-icon {
+  font-size: 35px;
+  color: #ff3b30;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.7; /* Reduce la opacidad al pasar el mouse */
+  }
 }

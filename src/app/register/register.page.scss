@@ -1,74 +1,138 @@
-
-.logo-img {
-  display: block;
-  margin: 0 auto;
-  width: 125px; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: 150px; /* Hacer el ancho y alto iguales para formar el círculo */
-  transition: transform 0.09s ease-in-out;
-
-}
-ion-header {
-  --background: #f5e1da; /* Fondo pastel para el header */
-  ion-toolbar {
-    --background: #f5e1da; /* Fondo pastel para el toolbar */
-    ion-title {
-      color: #5b5b5b; /* Color del texto */
-    }
-    ion-icon.close-icon {
-      color: #000; /* Color negro para el icono */
-      margin-left: auto; /* Alinea el icono a la derecha */
-      font-size: 24px; /* Ajusta el tamaño del icono */
-      cursor: pointer; /* Añade el cursor de puntero */
-      transition: transform 0.1s ease-in-out; /* Efecto de transición */
-
-      &:hover {
-        transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
-      }
-
-      &:active {
-        transform: scale(0.9); /* Reduce el tamaño al hacer clic */
-      }
-    }
-  }
-}
-
+// Estilo general para el contenido
 .home-content {
   --background: #f9f9f9; /* Fondo pastel para el contenido */
-}
-.close-icon{
-
-  --background: #e8f0fe;
-}
-.logo-img {
-  display: block;
-  margin: 20px auto; /* Centra la imagen */
-  width: 150px; /* Ajusta el tamaño de la imagen */
-  height: 150px; /* Ajusta la altura de la imagen */
-  border-radius: 50%; /* Hace que la imagen sea circular */
-  object-fit: cover; /* Asegura que la imagen se ajuste dentro del borde circular */
-}
-
-.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
 }
 
+// Estilos para el header y toolbar
+ion-header {
+  --background: #f5e1da; /* Fondo pastel */
+  
+  ion-toolbar {
+    --background: #f5e1da; /* Fondo pastel para el toolbar */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    ion-title {
+      color: #5b5b5b; /* Color del texto */
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    ion-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    ion-icon.close-icon {
+      color: #000;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.15s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+// Estilos para el logo
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Estilos para el formulario de registro
+.register-form {
+  width: 100%;
+  max-width: 400px; /* Ajusta el tamaño del formulario */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+// Estilos para los ion-card
+.form-card {
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+
+  ion-item {
+    --background: transparent;
+    --color: #5b5b5b;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
+
+// Estilos para los botones
 .button-container {
   display: flex;
-  justify-content: center; /* Centra los botones */
-  gap: 10px; /* Espacio entre los botones */
-}
+  justify-content: center;
+  margin-top: 15px;
 
-ion-item {
-  --background: #e8f0fe; /* Fondo pastel para los items */
-  --color: #5b5b5b; /* Color del texto */
-}
+  ion-button {
+    --background: #ffccd5;
+    color: #5b5b5b;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 12px 25px;
+    transition: transform 0.15s ease-in-out;
 
-ion-button {
-  --background: #ffccd5; /* Fondo pastel para los botones */
-  color: #5b5b5b; /* Color del texto de los botones */
-  transition: transform 0.1s ease-in-out; /* Efecto de transición */
+    &:hover {
+      transform: scale(1.05);
+    }
 
-  &:active {
-    transform: scale(0.95); /* Efecto al hacer click */
+    &:active {
+      transform: scale(0.95);
+    }
   }
+}
+
+// Estilos para los mensajes de error
+.error-messages {
+  color: #d9534f;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+// Estilos para el logo flotante
+ion-fab {
+  ion-avatar.app-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Ajuste para los placeholders y textos de entrada
+ion-input {
+  --placeholder-color: #999;
+  font-size: 1rem;
 }
